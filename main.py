@@ -13,7 +13,7 @@ def read_data():
 
 def find_similar_characters(query_embedding, all_embeddings, n_results=5):
     similarities = cosine_similarity([query_embedding], all_embeddings)[0]
-    top_indices = np.argsort(similarities)[::-1][:n_results]
+    top_indices = np.argsort(similarities)[-2::-1][:n_results]
     return top_indices
 
 
